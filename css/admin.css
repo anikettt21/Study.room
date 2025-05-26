@@ -1,0 +1,322 @@
+/* Modern Admin Panel Styles */
+
+.admin-container {
+  max-width: 950px;
+  width: 95%;
+  margin: 40px auto;
+  padding: 35px;
+  background-color: var(--white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+}
+
+h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h2:after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 4px;
+  background: var(--accent-color);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+}
+
+h3 {
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 1.25rem;
+}
+
+.admin-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 30px;
+  justify-content: center;
+}
+
+/* Button styles (leveraging variables from main styles.css) */
+.admin-options .btn {
+  padding: 10px 20px;
+  font-size: 0.95rem;
+  flex: 1;
+  min-width: 180px;
+  max-width: 250px;
+  text-align: center;
+}
+
+hr {
+  margin: 25px 0;
+  border: none;
+  border-top: 1px solid var(--gray-200);
+}
+
+input[type="password"],
+input[type="tel"],
+input[type="text"] {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius);
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  transition: var(--transition);
+  background-color: var(--gray-100);
+}
+
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.1);
+  background-color: var(--white);
+}
+
+.error-message {
+  color: var(--danger);
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+.success-message {
+  color: var(--success);
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+.info-message {
+  color: var(--text-light);
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+.message {
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+/* Admin panel sections */
+.admin-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.admin-section {
+  flex: 1;
+  min-width: 300px;
+  padding: 25px;
+  background-color: var(--gray-100);
+  border-radius: var(--border-radius);
+  margin-bottom: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--gray-200);
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-color);
+  font-size: 0.95rem;
+}
+
+.section-desc {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-top: 0;
+  margin-bottom: 18px;
+}
+
+/* User table styles */
+.user-list-container {
+  max-height: 350px;
+  overflow-y: auto;
+  overflow-x: auto;
+  margin-top: 15px;
+  background: var(--white);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--gray-200);
+}
+
+table {
+  width: 100%;
+  min-width: 300px;
+  border-collapse: collapse;
+}
+
+table th {
+  padding: 15px;
+  text-align: left;
+  background-color: var(--primary-color);
+  font-weight: 600;
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  white-space: nowrap;
+}
+
+table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-200);
+  vertical-align: middle;
+}
+
+/* Adjust column widths */
+table th:nth-child(1), 
+table td:nth-child(1) {
+  width: 30%;
+}
+
+table th:nth-child(2), 
+table td:nth-child(2) {
+  width: 40%;
+}
+
+table th:nth-child(3), 
+table td:nth-child(3) {
+  width: 30%;
+  text-align: center;
+}
+
+/* Actions column centered */
+table td:last-child {
+  text-align: center;
+}
+
+table tbody tr {
+  transition: var(--transition);
+}
+
+table tbody tr:hover {
+  background-color: var(--gray-100);
+}
+
+#no-users-message {
+  color: var(--text-light);
+  text-align: center;
+  padding: 25px;
+  font-size: 0.95rem;
+}
+
+.admin-footer {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.admin-footer .btn {
+  min-width: 150px;
+}
+
+.btn-delete {
+  background-color: var(--danger);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-delete:hover {
+  background-color: #d32f2f;
+  transform: translateY(-2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 25px 15px;
+    margin: 15px auto;
+    width: 96%;
+  }
+  
+  .admin-options {
+    flex-direction: column;
+  }
+  
+  .admin-options .btn {
+    max-width: none;
+  }
+  
+  /* Table adjustments for mobile */
+  table th, 
+  table td {
+    padding: 10px 8px;
+    font-size: 0.9rem;
+  }
+
+  /* Reduce table column widths for mobile */
+  table th:nth-child(1),
+  table td:nth-child(1) {
+    width: 35%;
+  }
+
+  table th:nth-child(2),
+  table td:nth-child(2) {
+    width: 40%;
+  }
+
+  table th:nth-child(3),
+  table td:nth-child(3) {
+    width: 25%;
+  }
+  
+  .btn-delete {
+    padding: 6px 10px;
+    font-size: 0.85rem;
+  }
+
+  /* Reduce padding in admin sections */
+  .admin-section {
+    padding: 20px 15px;
+    min-width: 100%;
+  }
+}
+
+/* Medium screens (like half-screen desktop) */
+@media (max-width: 1200px) and (min-width: 769px) {
+  .admin-section {
+    min-width: 250px;
+  }
+  
+  .admin-container {
+    padding: 30px 25px;
+  }
+  
+  table th, 
+  table td {
+    padding: 12px;
+  }
+  
+  /* More compact buttons */
+  .btn-delete {
+    padding: 6px 12px;
+  }
+}

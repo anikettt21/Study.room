@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Panel - Study-Room</title>
+  <link rel="icon" type="image/png" href="assets/logo2.png">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <!-- Admin Login (shown if admin password is set) -->
+  <div id="admin-login" class="admin-container" style="display: none;">
+    <h2>Admin Login</h2>
+    <div class="form-group">
+      <label for="admin-password-input">Password</label>
+      <input type="password" id="admin-password-input" placeholder="Enter Admin Password">
+    </div>
+    <p id="login-error" class="error-message"></p>
+    <button id="admin-login-button" class="btn">Login</button>
+  </div>
+
+  <!-- Admin Panel (shown after login or if no password is set) -->
+  <div id="admin-panel" class="admin-container" style="display: none;">
+    <h2>Admin Panel</h2>
+    <div class="admin-options">
+      <button onclick="location.href='index.html'" class="btn">Home</button>
+      <button onclick="location.href='registration.html'" class="btn">Register Student</button>
+      <button onclick="location.href='hall1.html'" class="btn">View Halls</button>
+      <button onclick="location.href='students.html'" class="btn">View All Students</button>
+    </div>
+    
+    <hr>
+    
+    <div class="admin-sections">
+      <!-- Admin Password Section -->
+      <div class="admin-section">
+        <h3>Admin Settings</h3>
+        <div class="form-group">
+          <label for="new-admin-password">Set / Change Admin Password</label>
+          <input type="password" id="new-admin-password" placeholder="New Admin Password">
+          <p id="password-requirements" class="info-message">Password must be at least 8 characters and contain both letters and numbers</p>
+          <p id="admin-password-message" class="message"></p>
+        </div>
+        <button id="set-admin-password-button" class="btn">Save Admin Password</button>
+      </div>
+
+      <!-- User Management Section -->
+      <div class="admin-section">
+        <h3>Add New User</h3>
+        <p class="section-desc">Add users who can access the website when admin is not present</p>
+        <div class="form-group">
+          <label for="user-name">User Name</label>
+          <input type="text" id="user-name" placeholder="Enter user name">
+        </div>
+        <div class="form-group">
+          <label for="user-phone">Phone Number</label>
+          <input type="tel" id="user-phone" placeholder="Enter phone number">
+        </div>
+        <div class="form-group">
+          <label for="user-password">Password</label>
+          <input type="password" id="user-password" placeholder="Enter password">
+          <p class="info-message">Password must be at least 8 characters and contain both letters and numbers</p>
+        </div>
+        <button id="add-user-button" class="btn">Add User</button>
+        <p id="user-message" class="message"></p>
+      </div>
+    </div>
+    
+    <!-- User List Section -->
+    <div class="admin-section">
+      <h3>Registered Users</h3>
+      <div class="user-list-container">
+        <table id="user-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="user-list">
+            <!-- User list will be populated here -->
+          </tbody>
+        </table>
+        <div id="no-users-message" style="display: none;">
+          <p>No users have been added yet.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-footer">
+      <button id="logout-admin-button" class="btn btn-outline">Logout</button>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+  <script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Exported from Render on 2025-02-25T13:38:53Z
+services:
+- type: web
+  name: hie
+  runtime: node
+  repo: https://github.com/anikettt21/hie
+  plan: free
+  region: oregon
+  buildCommand: npm install
+  startCommand: node server.js
+version: "1"
